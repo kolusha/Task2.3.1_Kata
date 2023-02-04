@@ -7,9 +7,11 @@
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
+    <th:block th:each="user : ${users}">
+        <h1 th:text="${user}"></h1>
     </th:block>
 </div>
+<br>
+<a href="/people">All users</a>
 </body>
 </html>
