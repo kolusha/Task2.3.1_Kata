@@ -1,7 +1,5 @@
 package web.config;
 
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -17,8 +15,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,8 +26,11 @@ import java.util.Properties;
 @ComponentScan("web")
 public class AppConfig {
 
-    @Autowired
-    private Environment env;
+    public AppConfig(Environment env) {
+        this.env = env;
+    }
+
+    private final Environment env;
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

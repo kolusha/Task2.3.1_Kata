@@ -3,8 +3,15 @@ package web.service;
 import web.model.User;
 
 import java.util.List;
+
 public interface UserService {
-    public List<User> getAllUsers();
-    public User getUserById(int id);
-    public void addUser(User user);
+    List<User> getAllUsers();
+
+    User getUserById(int id);
+
+    void addUser(User user);
+
+    void updateUser(int id, User user);
+
+    void deleteUserById(int id);
 }
